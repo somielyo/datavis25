@@ -1,17 +1,80 @@
-<html>
-  <head></head>
-  <body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisation Wikidata</title>
+  <style>
+    /* Reset de base */
+    body, h1, p, a {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 50vh;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
     <h1>Visualisation faite avec Wikidata</h1>
-    <!---<p>
-      Lien vers la requête Wikidata : <a href="https://w.wiki/CnJh">https://w.wiki/CnJh</a>
-    </p>-->
-    <!---<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3AMap%0A%0ASELECT%20%3Fpainter%20%3FpainterLabel%20%3Fdate_of_birth%20%3Fimage%20%3Fplace_of_birth%20%3Fplace_of_birthLabel%20%3Fmovement%20%3FmovementLabel%20%3Fcoordinate_location%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cen%22.%20%7D%0A%20%20%3Fpainter%20wdt%3AP106%20wd%3AQ1028181%3B%0A%20%20%20%20wdt%3AP27%20wd%3AQ142%3B%0A%20%20%20%20wdt%3AP569%20%3Fdate_of_birth%3B%0A%20%20%20%20wdt%3AP18%20%3Fimage%3B%0A%20%20%20%20wdt%3AP19%20%3Fplace_of_birth%3B%0A%20%20%20%20wdt%3AP135%20%3Fmovement.%0A%20%20%20%3Fplace_of_birth%20wdt%3AP625%20%3Fcoordinate_location.%0A%7D%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-  -->
-    <img src="viz (1).jpg" alt="">
-   <!---<p>
-      Visualisation faite avec <a href="https://www.rawgraphs.io/">https://www.rawgraphs.io/</a>
-      
-    </p> -->
-    <img src="wd_peintres.jpg">
-  </body>
+  </header>
+  <main>
+    <p>
+      Lien vers la requête Wikidata : 
+      <a href="https://w.wiki/CnJh" target="_blank" rel="noopener">https://w.wiki/CnJh</a>
+    </p>
+    <iframe src="https://query.wikidata.org/embed.html#%23defaultView%3AMap%0A%0ASELECT%20%3Fpainter%20%3FpainterLabel%20%3Fdate_of_birth%20%3Fimage%20%3Fplace_of_birth%20%3Fplace_of_birthLabel%20%3Fmovement%20%3FmovementLabel%20%3Fcoordinate_location%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cen%22.%20%7D%0A%20%20%3Fpainter%20wdt%3AP106%20wd%3AQ1028181%3B%0A%20%20%20%20wdt%3AP27%20wd%3AQ142%3B%0A%20%20%20%20wdt%3AP569%20%3Fdate_of_birth%3B%0A%20%20%20%20wdt%3AP18%20%3Fimage%3B%0A%20%20%20%20wdt%3AP19%20%3Fplace_of_birth%3B%0A%20%20%20%20wdt%3AP135%20%3Fmovement.%0A%20%20%20%3Fplace_of_birth%20wdt%3AP625%20%3Fcoordinate_location.%0A%7D%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    <img src="viz (1).jpg" alt="Visualisation 1">
+    <p>
+      Visualisation faite avec 
+      <a href="https://www.rawgraphs.io/" target="_blank" rel="noopener">https://www.rawgraphs.io/</a>
+    </p>
+    <img src="wd_peintres.jpg" alt="Visualisation 2">
+  </main>
+</body>
 </html>
