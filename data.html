@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Raining Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .rain-container {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff;
+        }
+        .rain {
+            position: absolute;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            animation: rainAnimation 5s linear infinite;
+        }
+        @keyframes rainAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+        .rain span {
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            color: #00aaff;
+            animation: fadeInOut 1s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <input type="text" id="textInput" placeholder="Enter words here" />
+            <button onclick="createRain()">Show Rain Effect</button>
+        </div>
+        <div class="rain-container" id="rainContainer"></div>
+    </div>
+
+    <script>
+        function createRain() {
+            const inputText = document.getElementById('textInput').value;
+            const rainContainer = document.getElementById('rainContainer');
+
+            if (!inputText) {
+                alert('Please enter some text!');
+                return;
+            }
+
+            rainContainer.innerHTML = ''; // Clear previous content
+            const rainDiv = document.createElement('div');
+            rainDiv.className = 'rain';
+
+            const words = inputText.split(' ');
+            words.forEach(word => {
+                const span = document.createElement('span');
+                span.textContent = word;
+                rainDiv.appendChild(span);
+            });
+
+            rainContainer.appendChild(rainDiv);
+        }
+    </script>
+</body>
+</html>
